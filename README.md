@@ -2,7 +2,7 @@
 
 Shouldly-inspired assertions for Rust
 
-## Installation
+## Install:
 
 `Cargo.toml`:
 
@@ -11,7 +11,7 @@ Shouldly-inspired assertions for Rust
 shoulds = { git = "https://github.com/tarrball/shoulds", branch = "main" }
 ```
 
-## Use
+## And Enjoy:
 
 `src/lib.rs`:
 
