@@ -6,6 +6,10 @@ Current assertion functions include:
 
 * `should_be`
 * `should_not_be`
+* `should_be_false`
+* `should_be_true`
+* `should_be_error`
+* `should_be_ok`
 
 I'll add more assertions along the way as the need arises.
 
