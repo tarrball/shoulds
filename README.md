@@ -1,6 +1,13 @@
 # shoulds
 
-Shouldly-inspired assertions for Rust
+[Shouldly-inspired](https://docs.shouldly.io) assertions for Rust.
+
+Current assertion functions include:
+
+* `should_be`
+* `should_not_be`
+
+I'll add more assertions along the way as the need arises.
 
 ## Install:
 
