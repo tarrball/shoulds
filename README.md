@@ -1,6 +1,6 @@
 # shoulds
 
-[Shouldly-inspired](https://docs.shouldly.io) assertions for Rust.
+_shoulds_ is a [Shouldly-inspired](https://docs.shouldly.io) test assertion library for testing Rust.
 
 Current assertion functions include:
 
