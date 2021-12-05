@@ -1,2 +1,3 @@
 # shoulds
-Shouldy-inspired assertions for Rust
+
+Shouldly-inspired assertions for Rust

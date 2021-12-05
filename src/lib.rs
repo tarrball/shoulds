@@ -1,18 +1,18 @@
 use std::fmt::Debug;
 
-trait Shouldly<T: PartialEq + Debug>  {
+trait Shoulds<T: PartialEq + Debug>  {
     fn should_be(self, expected: T);
 
     fn should_not_be(self, expected: T);
 }
 
-trait ShouldlyStr {
+trait ShouldsStr {
     fn should_be(&self, expected: &str);
 
     fn should_not_be(&self, expected: &str);
 }
 
-impl<T: PartialEq + Debug> Shouldly<T> for T {
+impl<T: PartialEq + Debug> Shoulds<T> for T {
     fn should_be(self, expected: T) {
         assert_eq!(self, expected);
     }
@@ -22,7 +22,7 @@ impl<T: PartialEq + Debug> Shouldly<T> for T {
     }
 }
 
-impl ShouldlyStr for str {
+impl ShouldsStr for str {
     fn should_be(&self, expected: &str) {
         assert_eq!(self, expected);
     }
@@ -34,7 +34,7 @@ impl ShouldlyStr for str {
 
 #[cfg(test)]
 mod tests {
-    use crate::Shouldly;
+    use crate::Shoulds;
 
     #[test]
     fn i32_should_be() {
