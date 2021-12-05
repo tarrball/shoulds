@@ -1,12 +1,12 @@
 use std::fmt::Debug;
 
-trait Shoulds<T: PartialEq + Debug>  {
+pub trait Shoulds<T: PartialEq + Debug>  {
     fn should_be(self, expected: T);
 
     fn should_not_be(self, expected: T);
 }
 
-trait ShouldsStr {
+pub trait ShouldsStr {
     fn should_be(&self, expected: &str);
 
     fn should_not_be(&self, expected: &str);
