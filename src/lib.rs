@@ -32,13 +32,13 @@ impl ShouldsStr for str {
     }
 }
 
-pub trait ShouldBool {
+pub trait ShouldsBool {
     fn should_be_false(self);
 
     fn should_be_true(self);
 }
 
-impl ShouldBool for bool {
+impl ShouldsBool for bool {
     fn should_be_false(self) {
         assert_eq!(self, false);
     }
@@ -48,13 +48,13 @@ impl ShouldBool for bool {
     }
 }
 
-pub trait ShouldResult {
+pub trait ShouldsResult<T, E> {
     fn should_be_ok(&self);
 
     fn should_be_error(&self);
 }
 
-impl<T, E> ShouldResult for Result<T, E> {
+impl<T, E> ShouldsResult<T, E> for Result<T, E> {
     fn should_be_error(&self) {
         assert_eq!(self.is_err(), true);
     }
@@ -66,7 +66,7 @@ impl<T, E> ShouldResult for Result<T, E> {
 
 #[cfg(test)]
 mod tests {
-    use crate::{Shoulds, ShouldBool, ShouldResult};
+    use crate::{Shoulds, ShouldsBool, ShouldsResult};
 
     #[test]
     fn true_should_be_true() {
