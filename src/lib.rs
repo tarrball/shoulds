@@ -16,6 +16,34 @@ impl<T: PartialEq + Debug> Shoulds<T> for T {
     }
 }
 
+pub trait ShouldsOrds<T: PartialOrd + Debug>  {    
+    fn should_be_greater_than(self, expected: T);
+
+    fn should_be_greater_than_or_equal_to(self, expected: T);
+
+    fn should_be_less_than(self, expected: T);
+
+    fn should_be_less_than_or_equal_to(self, expected: T);
+}
+
+impl<T: PartialOrd + Debug> ShouldsOrds<T> for T {
+    fn should_be_greater_than(self, expected: T) {
+        assert!(self > expected);
+    }
+
+    fn should_be_greater_than_or_equal_to(self, expected: T) {
+        assert!(self >= expected);
+    }
+
+    fn should_be_less_than(self, expected: T) {
+        assert!(self < expected);
+    }
+
+    fn should_be_less_than_or_equal_to(self, expected: T) {
+        assert!(self <= expected);
+    }
+}
+
 pub trait ShouldsStr {
     fn should_be(&self, expected: &str);
 
@@ -66,7 +94,7 @@ impl<T, E> ShouldsResult<T, E> for Result<T, E> {
 
 #[cfg(test)]
 mod tests {
-    use crate::{Shoulds, ShouldsBool, ShouldsResult};
+    use crate::{Shoulds, ShouldsBool, ShouldsResult, ShouldsOrds};
 
     #[test]
     fn true_should_be_true() {
@@ -91,14 +119,81 @@ mod tests {
     }
 
     #[test]
-    fn i32_should_be() {
+    fn partialeq_should_be() {
         2.should_be(2);
     }
 
     #[test]
-    fn i32_should_not_be() {
+    fn partialeq_should_not_be() {
         1.should_not_be(2);
     }
+
+    #[test]
+    fn partialord_should_be_greater_than_pass() {
+        5.should_be_greater_than(4);
+    }
+
+    #[test]
+    #[should_panic]
+    fn partialord_should_be_greater_than_lt_fail() {
+        5.should_be_greater_than(6);
+    }
+
+    #[test]
+    #[should_panic]
+    fn partialord_should_be_greater_than_eq_fail() {
+        5.should_be_greater_than(5);
+    }
+
+    #[test]
+    fn partialord_should_be_greater_than_or_equal_to_eq_pass() {
+        5.should_be_greater_than_or_equal_to(5);
+    }
+
+    #[test]
+    fn partialord_should_be_greater_than_or_equal_to_gt_pass() {
+        5.should_be_greater_than_or_equal_to(4);
+    }
+
+    #[test]
+    #[should_panic]
+    fn partialord_should_be_greater_than_or_equal_to_lt_fail() {
+        5.should_be_greater_than(6);
+    }
+
+    #[test]
+    fn partialord_should_be_less_than_pass() {
+        4.should_be_less_than(5);
+    }
+
+    #[test]
+    #[should_panic]
+    fn partialord_should_be_less_than_gt_fail() {
+        5.should_be_less_than(4);
+    }
+
+    #[test]
+    #[should_panic]
+    fn partialord_should_be_less_than_eq_fail() {
+        5.should_be_less_than(5);
+    }
+
+    #[test]
+    fn partialord_should_be_less_than_or_equal_to_eq_pass() {
+        5.should_be_less_than_or_equal_to(5);
+    }
+
+    #[test]
+    fn partialord_should_be_less_than_or_equal_to_gt_pass() {
+        5.should_be_less_than_or_equal_to(6);
+    }
+
+    #[test]
+    #[should_panic]
+    fn partialord_should_be_less_than_or_equal_to_gt_fail() {
+        5.should_be_less_than_or_equal_to(4);
+    }
+
 
     #[test]
     fn error_result_should_be_error() {
