@@ -1,6 +1,6 @@
 //! # shoulds
 //! 
-//! `shoulds` is an assertion library for writing easy and enjoyable  test assertions.
+//! `shoulds` is an assertion library for writing easy and enjoyable test assertions.
 
 use std::fmt::Debug;
 
