@@ -22,9 +22,8 @@ I'll add more assertions along the way as the need arises.
 `Cargo.toml`:
 
 ```toml
-[dependencies.shoulds]
-git = "https://github.com/tarrball/shoulds"
-branch = "main"
+[dependencies]
+shoulds = "0.1.2"
 ```
 
 ## And Enjoy:

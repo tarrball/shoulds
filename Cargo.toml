@@ -2,7 +2,7 @@
 name = "shoulds"
 description = "An intuitive and simple library for writing test assertions in a natural and fluent language."
 license = "MIT"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
