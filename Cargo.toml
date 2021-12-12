@@ -1,10 +1,11 @@
 [package]
-name = "shoulds"
+authors = ["Andrew <andrew@tarrball.com>"]
+categories = ["development-tools", "development-tools::testing"]
 description = "An intuitive and simple library for writing test assertions in a natural and fluent language."
+edition = '2021'
+keywords = ["test", "assertion", "shouldly"]
 license = "MIT"
-version = "0.1.2"
-edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
+name = "shoulds"
+readme = "README.md"
+repository = "https://github.com/tarrball/shoulds/"
+version = "0.1.3"

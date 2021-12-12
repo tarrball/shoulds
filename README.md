@@ -23,7 +23,7 @@ I'll add more assertions along the way as the need arises.
 
 ```toml
 [dependencies]
-shoulds = "0.1.2"
+shoulds = "0.1.3"
 ```
 
 ## And Enjoy:
