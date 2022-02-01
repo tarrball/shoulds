@@ -34,7 +34,7 @@ I'll add more assertions along the way as the need arises.
 `Cargo.toml`:
 
 ```toml
-[dependencies]
+[dev-dependencies]
 shoulds = "0.1.5"
 ```
 
