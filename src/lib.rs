@@ -40,11 +40,11 @@ pub trait ShouldsBool {
 
 impl ShouldsBool for bool {
     fn should_be_false(self) {
-        assert_eq!(self, false);
+        assert_eq!(self, false, "Expected false but was true");
     }
 
     fn should_be_true(self) {
-        assert_eq!(self, true);
+        assert_eq!(self, true, "Expected true but was false");
     }
 }
 
@@ -321,13 +321,13 @@ mod tests {
     use crate::{ShouldsBool, ShouldsOrds, ShouldsResult, ShouldsStr};
 
     #[test]
-    #[should_panic]
+    #[should_panic(expected = "Expected false but was true")]
     fn true_should_not_be_false() {
         true.should_be_false();
     }
 
     #[test]
-    #[should_panic]
+    #[should_panic(expected = "Expected true but was false")]
     fn false_should_not_be_true() {
         false.should_be_true();
     }
@@ -401,7 +401,7 @@ mod tests {
     fn string_contain_fail() {
         let text = String::from("hello");
         let query = String::from("goodbye");
-        
+
         text.should_contain(&query)
     }
 
@@ -410,7 +410,7 @@ mod tests {
     fn string_should_not_contain_fail() {
         let text = String::from("hello");
         let query = String::from("hello");
-        
+
         text.should_not_contain(&query)
     }
 }
