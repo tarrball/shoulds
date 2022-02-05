@@ -6,26 +6,26 @@ _shoulds_ is a [Shouldly-inspired](https://docs.shouldly.io) test assertion libr
 
 ### Equality
 
-* `should_be`
-* `should_be_greater_than`
-* `should_be_greater_than_or_equal_to`
-* `should_be_less_than`
-* `should_be_less_than_or_equal_to`
+-   `should_be`
+-   `should_be_greater_than`
+-   `should_be_greater_than_or_equal_to`
+-   `should_be_less_than`
+-   `should_be_less_than_or_equal_to`
 
 ### Strings
 
-* `should_contain`
-* `should_not_contain`
+-   `should_contain`
+-   `should_not_contain`
 
 ### Booleans
 
-* `should_be_false`
-* `should_be_true`
+-   `should_be_false`
+-   `should_be_true`
 
 ### Results
 
-* `should_be_error`
-* `should_be_ok`
+-   `should_be_error`
+-   `should_be_ok`
 
 I'll add more assertions along the way as the need arises.
 
@@ -35,7 +35,7 @@ I'll add more assertions along the way as the need arises.
 
 ```toml
 [dev-dependencies]
-shoulds = "0.1.5"
+shoulds = "0.1.6"
 ```
 
 ## Enjoy:
