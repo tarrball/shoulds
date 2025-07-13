@@ -1,11 +1,13 @@
 [package]
-authors = ["Andrew <andrew@tarrball.com>"]
-categories = ["development-tools", "development-tools::testing"]
-description = "An intuitive and simple library for writing test assertions in a natural and fluent language."
-edition = '2021'
-keywords = ["test", "assertion", "shouldly", "fluent"]
-license = "MIT"
 name = "shoulds"
+version = "0.3.0"
+edition = "2021"
+authors = ["Andrew Tarr <andrew@tarrball.com>"]
+
+description = "An intuitive, fluent assertion library for writing expressive test expectations in Rust."
 readme = "README.md"
-repository = "https://github.com/tarrball/shoulds/"
-version = "0.2.0"
+repository = "https://github.com/tarrball/shoulds"
+license = "MIT"
+
+keywords = ["test", "assert", "shouldly", "fluent", "assertion"]
+categories = ["development-tools", "development-tools::testing"]
