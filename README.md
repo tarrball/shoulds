@@ -12,7 +12,7 @@ It helps you write readable, intention-revealing tests like:
 use shoulds::Shouldable;
 
 let result = 42;
-result.should().eq(&42);
+result.should().eq( & 42);
 ```
 
 ---
@@ -67,9 +67,6 @@ Planned enhancements include:
 - Result/Option assertions (`be_ok`, `be_some`)
 - Custom diffing for better failure output
 - Optional colored output
-- Snapshot support?
-
-Want to help shape this crate? Feedback and contributions welcome!
 
 ---
 
