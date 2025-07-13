@@ -11,9 +11,16 @@ It helps you write readable, intention-revealing tests like:
 ```rust
 use shoulds::Shouldable;
 
-let result = 42;
-result.should().eq( & 42);
+#[test]
+fn adds_numbers_correctly() {
+    let result = 40 + 2;
+
+    result.should().eq(&42);
+}
 ```
+
+The API is designed to be intuitive and discoverable, so you can
+express expectations naturally—with minimal boilerplate and maximum clarity.
 
 ---
 
@@ -21,12 +28,25 @@ result.should().eq( & 42);
 
 Currently supported:
 
-### ✅ Equality
+### 🔢 Equality
 
 - `should().eq(&expected)`
 - `should().ne(&unexpected)`
 
-More comparison methods (greater than, less than, etc.) are coming soon.
+### ✅ Booleans
+
+- `should().be_true()`
+- `should().be_false()`
+
+### 🧩 Option
+
+- `should().be_some()`
+- `should().be_none()`
+
+### 🧪 Result
+
+- `should().be_ok()`
+- `should().be_err()`
 
 ---
 
@@ -36,12 +56,12 @@ In your `Cargo.toml`:
 
 ```toml
 [dev-dependencies]
-shoulds = "0.2.0"
+shoulds = "0.3.0"
 ```
 
 ---
 
-## 🧪 Example
+## 🧪 Examples
 
 ```rust
 use shoulds::Shouldable;
@@ -56,23 +76,6 @@ fn it_adds_numbers() {
     result.should().eq(&42);
 }
 ```
-
----
-
-## 🚧 Roadmap
-
-Planned enhancements include:
-
-- String and collection assertions (`contain`, `have_length`, etc.)
-- Result/Option assertions (`be_ok`, `be_some`)
-- Custom diffing for better failure output
-- Optional colored output
-
----
-
-## ⚠️ Note
-
-`shoulds` is still experimental and evolving. Expect breaking changes in the 0.x versions.
 
 ---
 

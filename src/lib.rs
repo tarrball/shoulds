@@ -18,8 +18,11 @@
 //!
 //! This crate is experimental and evolving. The API may change in 0.x versions as we build toward a richer set of assertions and improved error messages.
 
+mod core_bool;
 mod core_eq;
 mod core_ne;
+mod core_result;
 mod should;
+mod core_option;
 
 pub use should::{Should, Shouldable};
