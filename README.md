@@ -1,73 +1,82 @@
 # shoulds
 
-_shoulds_ is a [Shouldly-inspired](https://docs.shouldly.io) test assertion library for testing Rust.
+**shoulds** is a fluent assertion library for Rust tests, inspired
+by [FluentAssertions](https://github.com/fluentassertions/fluentassertions)
+and [Shouldly](https://github.com/shouldly/shouldly).
 
-## Current Assertions:
+It helps you write readable, intention-revealing tests like:
 
-### Equality
+```rust
+use shoulds::Shouldable;
 
--   `should_be`
--   `should_be_greater_than`
--   `should_be_greater_than_or_equal_to`
--   `should_be_less_than`
--   `should_be_less_than_or_equal_to`
+let result = 42;
+result.should().eq( & 42);
+```
 
-### Strings
+---
 
--   `should_contain`
--   `should_not_contain`
+## ✨ Assertions
 
-### Booleans
+Currently supported:
 
--   `should_be_false`
--   `should_be_true`
+### ✅ Equality
 
-### Results
+- `should().eq(&expected)`
+- `should().ne(&unexpected)`
 
--   `should_be_error`
--   `should_be_ok`
+More comparison methods (greater than, less than, etc.) are coming soon.
 
-I'll add more assertions along the way as the need arises.
+---
 
-## Install:
+## 📦 Installation
 
-`Cargo.toml`:
+In your `Cargo.toml`:
 
 ```toml
 [dev-dependencies]
-shoulds = "0.1.6"
+shoulds = "0.2.0"
 ```
 
-## Enjoy:
+---
 
-`src/lib.rs`:
+## 🧪 Example
 
-```rs
+```rust
+use shoulds::Shouldable;
+
 fn add(a: i32, b: i32) -> i32 {
     a + b
 }
 
-fn concat(a: &String, b: &String) -> String {
-    format!("{}{}", a, b)
-}
-
-#[cfg(test)]
-mod tests {
-    use crate::{add, concat};
-    use shoulds::*;
-
-    #[test]
-    fn add_adds_params_together() {
-        let result = add(40, 2);
-
-        result.should_be(42)
-    }
-
-    #[test]
-    fn concat_concats_strings_together() {
-        let result = concat(&"Hello, ".to_string(), &"world!".to_string());
-
-        result.should_be("Hello, world!".to_string());
-    }
+#[test]
+fn it_adds_numbers() {
+    let result = add(40, 2);
+    result.should().eq(&42);
 }
 ```
+
+---
+
+## 🚧 Roadmap
+
+Planned enhancements include:
+
+- String and collection assertions (`contain`, `have_length`, etc.)
+- Result/Option assertions (`be_ok`, `be_some`)
+- Custom diffing for better failure output
+- Optional colored output
+- Snapshot support?
+
+Want to help shape this crate? Feedback and contributions welcome!
+
+---
+
+## ⚠️ Note
+
+`shoulds` is still experimental and evolving. Expect breaking changes in the 0.x versions.
+
+---
+
+## 📄 License
+
+MIT
