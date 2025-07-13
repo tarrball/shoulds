@@ -61,24 +61,6 @@ shoulds = "0.3.0"
 
 ---
 
-## 🧪 Examples
-
-```rust
-use shoulds::Shouldable;
-
-fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
-
-#[test]
-fn it_adds_numbers() {
-    let result = add(40, 2);
-    result.should().eq(&42);
-}
-```
-
----
-
 ## 📄 License
 
 MIT
