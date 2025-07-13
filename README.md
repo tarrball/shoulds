@@ -10,7 +10,7 @@ It helps you write readable, intention-revealing tests like:
 use shoulds::Shouldable;
 
 let result = 42;
-result.should().eq( & 42);
+result.should().eq(&42);
 ```
 
 ---
