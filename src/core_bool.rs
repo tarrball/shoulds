@@ -14,12 +14,7 @@ impl<'a> Should<'a, bool> {
     /// # Panics
     /// Panics if the actual value is not true.
     pub fn be_true(&self) {
-        assert_eq!(
-            *self.actual(),
-            true,
-            "Expected {:?} to be true",
-            self.actual()
-        );
+        assert!(*self.actual(), "Expected {:?} to be true", self.actual());
     }
 
     /// Asserts that the value is false.
@@ -35,12 +30,7 @@ impl<'a> Should<'a, bool> {
     /// # Panics
     /// Panics if the actual value is not false.
     pub fn be_false(&self) {
-        assert_eq!(
-            *self.actual(),
-            false,
-            "Expected {:?} to be false",
-            self.actual()
-        );
+        assert!(!*self.actual(), "Expected {:?} to be false", self.actual());
     }
 }
 

@@ -21,8 +21,8 @@
 mod core_bool;
 mod core_eq;
 mod core_ne;
+mod core_option;
 mod core_result;
 mod should;
-mod core_option;
 
 pub use should::{Should, Shouldable};
