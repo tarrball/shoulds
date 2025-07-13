@@ -1,5 +1,7 @@
 # shoulds
 
+[![Crates.io](https://img.shields.io/crates/v/shoulds)](https://crates.io/crates/shoulds)
+
 **shoulds** is a fluent assertion library for Rust tests, inspired
 by [FluentAssertions](https://github.com/fluentassertions/fluentassertions)
 and [Shouldly](https://github.com/shouldly/shouldly).
